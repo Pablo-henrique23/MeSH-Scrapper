@@ -1,7 +1,7 @@
 def formatar(lista_termos:list) -> list:
     newList = []
     for palavra in lista_termos:
-        if ', ' in palavra:
+        if ',' in palavra:
             pre = palavra[:palavra.find(',')+1].replace(',','').strip()
             if '(' in palavra:
                 pos = palavra[palavra.find(',')+1:palavra.find('(')]
