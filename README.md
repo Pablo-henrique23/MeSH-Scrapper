@@ -36,12 +36,11 @@ pip install -r requirements.txt
 
 ## Utilização
 ### Windows
-No cmd, digite
 ```
 python main.py
 ```
 ### Linux
-No terminal, digite
+
 ```
 python3 main.py
 ```
