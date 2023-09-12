@@ -18,7 +18,7 @@ Instale o Python 3 e o [pip](https://pip.pypa.io/en/stable/).
 ### Windows
 Baixe os arquivos pelo link a seguir e extraia-os numa pasta https://www.github.com/zecabum/MeSH-Entry-Terms-string-generator/archive/refs/heads/main.zip
 
-Depois disso, abra o CMD e use o comando ```cd``` seguido da pasta em que os arquivos foram extraídos
+Depois disso, abra o CMD e use o comando ```cd``` seguido do caminho até a pasta em que os arquivos foram extraídos
 ### Linux
 Use ```git clone``` para fazer o download dos arquivos
 ```
