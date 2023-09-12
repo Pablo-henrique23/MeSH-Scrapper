@@ -2,10 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 from funcoes import *
 
-BACKSLASH = "\\" # constante, nao troque
+BACKSLASH = "\\"
 req = requests.get(input("URL> "))
 
-#req = requests.get('https://www.ncbi.nlm.nih.gov/mesh/68000544')
 html = str(req.content)[str(req.content).find('Entry Terms'):]
 html = html[:html.find('</ul>')]
 soup = BeautifulSoup(html, 'html.parser')
