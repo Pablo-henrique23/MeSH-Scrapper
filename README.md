@@ -1,7 +1,7 @@
 # MeSH-Entry-Terms-string-generator
 Recebe um link de uma doença do MeSH (https://www.ncbi.nlm.nih.gov/mesh/), localiza os entry terms e cria uma string para ser utilizada no PubMed
 
--- Ex:
+Exemplo:
 
       input: 
       https://www.ncbi.nlm.nih.gov/mesh/68003715
