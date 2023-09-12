@@ -14,3 +14,14 @@ Instale o Python 3 atraves da loja da Microsoft e use o [pip] (https://pip.pypa.
 ```
 pip install -r requirements.txt
 ```
+## Utilização
+### Windows
+No cmd, digite
+```
+python main.py
+```
+### Linux
+No terminal, digite
+```
+python3 main.py
+```
