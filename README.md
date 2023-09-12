@@ -12,8 +12,16 @@ Recebe um link de uma doença do MeSH (https://www.ncbi.nlm.nih.gov/mesh/), loca
 ## Instalação
 Instale o Python 3 através da loja da Microsoft e o [pip](https://pip.pypa.io/en/stable/). Após isso, use o pip para instalar os pacotes necessários usando o comando
 ```
-pip install -r requirements.txt
+git clone https://github.com/zecabum/MeSH-Entry-Terms-string-generator.git
 ```
+```
+cd MeSH-Entry-Terms-string-generator/
+```
+```
+pip install -r MeSH-Entry-Terms-string-generator/requirements.txt
+```
+Ou, alternativamente, mande o GitHub baixar os arquivos para você.
+
 ## Utilização
 ### Windows
 No cmd, digite
