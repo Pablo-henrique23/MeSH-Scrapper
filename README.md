@@ -44,3 +44,5 @@ No terminal, digite
 ```
 python3 main.py
 ```
+## Erros
+Durante a execução do script, pode ocorrer um erro de conexão devido à requisição que ele precisa fazer. Caso isso ocorra, apenas execute-o novamente, pois o erro deve sumir automaticamente após 1 ou 2 tentativas a mais.
