@@ -20,7 +20,7 @@ cd MeSH-Entry-Terms-string-generator/
 ```
 E então
 ```
-pip install -r MeSH-Entry-Terms-string-generator/requirements.txt
+pip install -r requirements.txt
 ```
 **Ou, alternativamente, mande o GitHub baixar os arquivos para você.**
 
