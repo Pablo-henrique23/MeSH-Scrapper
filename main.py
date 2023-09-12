@@ -11,11 +11,12 @@ html = html[:html.find('</ul>')]
 lista_termos = []
 
 for item in titulo.find_all("h1", class_="title"):
-    lista_termos.append(item.string)
+    lista_termos.append(item.string.replace(BACKSLASH, ''))
 
 soup = BeautifulSoup(html, 'html.parser')
 for item in soup.find_all('li'):
     lista_termos.append(rf"{item.string.replace(BACKSLASH, '')}")
 
 termos = '('+" OR ".join(formatar(lista_termos))+')'
-print("\n"+termos)
+print(f"\n{'[+][Entry terms]':<16} {termos}")
+print(f'\n{"[+][Link]":<16} https://pubmed.ncbi.nlm.nih.gov/?term={termos.replace(" ", "+")}')
