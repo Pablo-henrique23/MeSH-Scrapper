@@ -11,9 +11,10 @@ Exemplo:
       
       [+] https://pubmed.ncbi.nlm.nih.gov/?term=("Alzheimer+Disease"+OR+"Alzheimer+Dementias"+OR+"Alzheimer+Dementia"+OR+"Alzheimer's+Disease"+OR+"Senile+Dementia"+OR+"AlzheimerType+Dementia+(ATD)"+OR+"Alzheimer-Type+Dementia+(ATD)"+OR+"Alzheimer+Type+Dementia+(ATD)"+OR+"AlzheimerType+Dementia"+OR+"Alzheimer+Type+Dementia"+OR+"Alzheimer-Type+Dementia"+OR+"Primary+Senile+Degenerative+Dementia"+OR+"Alzheimer+Sclerosis"+OR+"Alzheimer+Syndrome"+OR+"Alzheimer's+Diseases"+OR+"Alzheimer+Diseases"+OR+"Alzheimers+Diseases"+OR+"Alzheimer+Type+Senile+Dementia"+OR+"Acute+Confusional+Senile+Dementia"+OR+"Presenile+Dementia"+OR+"Late+Onset+Alzheimer+Disease"+OR+"Focal+Onset+Alzheimer's+Disease"+OR+"Familial+Alzheimer+Disease+(FAD)"+OR+"Familial+Alzheimer+Disease"+OR+"Familial+Alzheimer+Diseases+(FAD)"+OR+"Early+Onset+Alzheimer+Disease"+OR+"Presenile+Alzheimer+Dementia")
 
-## Instalação
+## Requisitos
+Python3 e [pip](https://pip.pypa.io/en/stable/)
 
-Instale o Python 3 e o [pip](https://pip.pypa.io/en/stable/).
+## Instalação
 
 ### Windows
 Baixe os arquivos pelo link a seguir e extraia-os numa pasta https://www.github.com/zecabum/MeSH-Entry-Terms-string-generator/archive/refs/heads/main.zip
