@@ -18,5 +18,5 @@ for item in soup.find_all('li'):
     lista_termos.append(rf"{item.string.replace(BACKSLASH, '')}")
 
 termos = '('+" OR ".join(formatar(lista_termos))+')'
-print(f"\n{'[+][Entry terms]':<16} {termos}")
-print(f'\n{"[+][Link]":<16} https://pubmed.ncbi.nlm.nih.gov/?term={termos.replace(" ", "+")}')
+print(f"\n[+] {termos}")
+print(f'\n[+] https://pubmed.ncbi.nlm.nih.gov/?term={termos.replace(" ", "+")}')
