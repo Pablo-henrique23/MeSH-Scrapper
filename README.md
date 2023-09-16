@@ -19,31 +19,32 @@ Python3 e [pip](https://pip.pypa.io/en/stable/)
 ### Windows
 Baixe os arquivos pelo link a seguir e extraia-os numa pasta https://www.github.com/zecabum/MeSH-Entry-Terms-string-generator/archive/refs/heads/main.zip
 
-Depois disso, abra o CMD e use o comando ```cd``` seguido do caminho até a pasta em que os arquivos foram extraídos
-### Linux
-Use ```git clone``` para fazer o download dos arquivos
-```
-git clone https://github.com/zecabum/MeSH-Entry-Terms-string-generator.git
-```
-```
-cd MeSH-Entry-Terms-string-generator/
-```
-## Pip
-Depois de baixar os arquivos **e entrar na pasta deles no terminal**, use o ```pip``` para instalar os pacotes necessários 
-```
+Depois disso, abra o CMD e use o comando ```cd``` seguido do caminho até a pasta em que os arquivos foram extraídos.
+
+E finalmente
+```bash
 pip install -r requirements.txt
 ```
-
-
-## Utilização
-### Windows
+### Linux
+Use ```git clone``` para fazer o download dos arquivos
+```bash
+git clone https://github.com/zecabum/MeSH-Entry-Terms-string-generator.git
 ```
+```bash
+cd MeSH-Entry-Terms-string-generator/
+```
+```bash
+pip install -r requirements.txt
+```
+## Utilizaçao
+### Windows
+```bash
 python main.py
 ```
 ### Linux
-
-```
+```bash
 python3 main.py
 ```
+
 ## Erros
 Durante a execução do script, pode ocorrer um erro de conexão devido à requisição que ele precisa fazer. Caso isso ocorra, apenas execute-o novamente, pois o erro deve sumir automaticamente após 1 ou 2 tentativas a mais.
