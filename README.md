@@ -28,10 +28,10 @@ pip install -r requirements.txt
 ### Linux
 Use ```git clone``` para fazer o download dos arquivos
 ```bash
-git clone https://github.com/zecabum/MeSH-Entry-Terms-string-generator.git
+git clone https://github.com/zecabum/MeSH-Entry-Terms-String-Generator.git
 ```
 ```bash
-cd MeSH-Entry-Terms-string-generator/
+cd MeSH-Entry-Terms-String-Generator/
 ```
 ```bash
 pip install -r requirements.txt
