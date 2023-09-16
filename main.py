@@ -3,8 +3,9 @@ import requests
 from funcoes import *
 
 BACKSLASH = "\\" 
+linha()
 req = requests.get(input("URL> ").strip())
-
+linha()
 titulo = BeautifulSoup(req.content, 'html.parser')
 html = str(req.content)[str(req.content).find('Entry Terms'):]
 html = html[:html.find('</ul>')]

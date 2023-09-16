@@ -27,3 +27,7 @@ def del_rep(lista:list) -> list:
             for x in range(0,c-1):
                 lista.remove(palavra)
     return lista
+
+def linha():
+    print('-'*60)
+    
