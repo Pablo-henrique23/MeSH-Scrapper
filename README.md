@@ -17,7 +17,7 @@ Python3 e [pip](https://pip.pypa.io/en/stable/)
 ## Instalação
 
 ### Windows
-Baixe os arquivos pelo link a seguir e extraia-os numa pasta https://www.github.com/zecabum/MeSH-Entry-Terms-string-generator/archive/refs/heads/main.zip
+Baixe os arquivos pelo [link](https://www.github.com/zecabum/MeSH-Entry-Terms-string-generator/archive/refs/heads/main.zip) e extraia-os numa pasta
 
 Depois disso, abra o CMD e use o comando ```cd``` seguido do caminho até a pasta em que os arquivos foram extraídos.
 
