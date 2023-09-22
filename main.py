@@ -6,11 +6,11 @@ BACKSLASH = "\\"
 try:
     linha()
     req = requests.get(input("URL> ").strip())
+    linha()
 except OSError:
     print("Impossivel fazer conexao, tente novamente")
     exit
 else:    
-    linha()
     titulo = BeautifulSoup(req.content, 'html.parser')
     html = str(req.content)[str(req.content).find('Entry Terms'):]
     html = html[:html.find('</ul>')]
