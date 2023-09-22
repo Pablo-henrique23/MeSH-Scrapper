@@ -47,7 +47,7 @@ python main.py
 ```bash
 python3 main.py
 ```
-![Captura de tela em 2023-09-21 23-37-59](https://github.com/zecabum/MeSH-Entry-Terms-String-Generator/assets/105394456/d8453ab4-0fcb-4c9e-8b82-64a080e5889e)
+![Captura de tela em 2023-09-21 23-50-40](https://github.com/zecabum/MeSH-Entry-Terms-String-Generator/assets/105394456/43c5d2cc-a37f-4385-aed4-e416d26122b1)
 
 ## Erros
 Durante a execução do script, pode ocorrer um erro de conexão devido à requisição que ele precisa fazer. Caso isso ocorra, apenas execute-o novamente, pois o erro deve sumir automaticamente após 1 ou 2 tentativas a mais.
