@@ -1,3 +1,9 @@
+import re, requests
+from bs4 import BeautifulSoup
+
+def linha():
+    print('-'*60)
+
 def formatar(lista_termos:list) -> list:
     newList = []
     for palavra in lista_termos:
@@ -28,6 +34,16 @@ def del_rep(lista:list) -> list:
                 lista.remove(palavra)
     return lista
 
-def linha():
-    print('-'*60)
+def identificar_url(string:str) -> bool: #https://www.geeksforgeeks.org/python-check-url-string/
+    regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
+    url = re.findall(regex, string.strip())
+    if len(url) == 0:
+        return False
+    return True # Checa se uma dada string e um link e retorna true se sim
     
+def acharURLCorreto(entrada:str) -> str:
+    inicio = requests.get(f"https://www.ncbi.nlm.nih.gov/mesh/?term={entrada}").content # pega o html
+    inicio = str(inicio)[str(inicio).find(r'id="messagearea"'):] # corta uma parte do html
+    sopa = BeautifulSoup(inicio, 'html.parser') # prepara a sopa
+    return f'https://www.ncbi.nlm.nih.gov{sopa.find("a").get("href")}' # retorna apenas o link do primeiro <a achado
+

@@ -3,26 +3,26 @@ import requests
 from funcoes import *
 
 BACKSLASH = "\\" 
-try:
-    linha()
-    req = requests.get(input("URL> ").strip())
-    linha()
-except OSError:
-    print("Impossivel fazer conexao, tente novamente")
-    exit
-else:    
-    titulo = BeautifulSoup(req.content, 'html.parser')
-    html = str(req.content)[str(req.content).find('Entry Terms'):]
-    html = html[:html.find('</ul>')]
-    lista_termos = []
+linha()
+entrada = input("> ").strip()
+if identificar_url(entrada):
+    req = requests.get(entrada)
+else:
+    req = requests.get(acharURLCorreto(entrada))
+linha()
 
-    for item in titulo.find_all("h1", class_="title"):
-        lista_termos.append(item.string.replace(BACKSLASH, ''))
+titulo = BeautifulSoup(req.content, 'html.parser')
+html = str(req.content)[str(req.content).find('Entry Terms'):]
+html = html[:html.find('</ul>')]
+lista_termos = []
 
-    soup = BeautifulSoup(html, 'html.parser')
-    for item in soup.find_all('li'):
-        lista_termos.append(rf"{item.string.replace(BACKSLASH, '')}")
+for item in titulo.find_all("h1", class_="title"):
+    lista_termos.append(item.string.replace(BACKSLASH, ''))
 
-    termos = '('+" OR ".join(formatar(lista_termos))+')'
-    print(f"\n[+] {termos}")
-    print(f'\n[+] https://pubmed.ncbi.nlm.nih.gov/?term={termos.replace(" ", "+")}')
+soup = BeautifulSoup(html, 'html.parser')
+for item in soup.find_all('li'):
+    lista_termos.append(rf"{item.string.replace(BACKSLASH, '')}")
+
+termos = '('+" OR ".join(formatar(lista_termos))+')'
+print(f"\n[+] {termos}")
+print(f'\n[+] https://pubmed.ncbi.nlm.nih.gov/?term={termos.replace(" ", "+")}')

@@ -1,11 +1,13 @@
 # MeSH Entry Terms String Generator
 Recebe um link de uma doença do [MeSH](https://www.ncbi.nlm.nih.gov/mesh/), localiza os Entry Terms e cria uma string para ser utilizada no PubMed, além do link direto para o site.
 
+NOTA: Tambem pode utilizar o nome da doença (em ingles) ao inves do link direto.
+
 Exemplo:
       
       input: 
-      https://www.ncbi.nlm.nih.gov/mesh/68003715
-      
+      https://www.ncbi.nlm.nih.gov/mesh/68000544 
+
       output: 
       [+] ("Alzheimer Disease" OR "Alzheimer Dementias" OR "Alzheimer Dementia" OR "Alzheimer's Disease" OR "Senile Dementia" OR "AlzheimerType Dementia (ATD)" OR "Alzheimer-Type Dementia (ATD)" OR "Alzheimer Type Dementia (ATD)" OR "AlzheimerType Dementia" OR "Alzheimer Type Dementia" OR "Alzheimer-Type Dementia" OR "Primary Senile Degenerative Dementia" OR "Alzheimer Sclerosis" OR "Alzheimer Syndrome" OR "Alzheimer's Diseases" OR "Alzheimer Diseases" OR "Alzheimers Diseases" OR "Alzheimer Type Senile Dementia" OR "Acute Confusional Senile Dementia" OR "Presenile Dementia" OR "Late Onset Alzheimer Disease" OR "Focal Onset Alzheimer's Disease" OR "Familial Alzheimer Disease (FAD)" OR "Familial Alzheimer Disease" OR "Familial Alzheimer Diseases (FAD)" OR "Early Onset Alzheimer Disease" OR "Presenile Alzheimer Dementia")
       
