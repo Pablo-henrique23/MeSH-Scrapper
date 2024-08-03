@@ -1,65 +1,41 @@
-# MeSH Entry Terms String Generator
-Recebe um link de uma doença do [MeSH](https://www.ncbi.nlm.nih.gov/mesh/), localiza os Entry Terms e cria uma string para ser utilizada no PubMed, além do link direto para o site.
+# MeSH Scrapper
 
-NOTA: Tambem pode utilizar o nome da doença (em ingles) ao inves do link direto.
+MeSH Scrapper uma ferramenta de linha de comando (cli) que faz exatamente o que diz: scrapping na base de dados do MeSH. Ele serve para juntar e formatar corretamente sinônimos de termos que podem ser buscados nessa base de dados, a fim de facilitar, melhorar e ampliar a busca por artigos da área da saúde. MeSH Scrapper aceita nomes, códigos númericos e URLs que levam ao que deseja buscar. Também foi feito para reconhecer "comandos avançados" nos termos de busca (disponível apenas em nomes), como "alzheimer[ti]".
 
-Exemplo:
-      
-      input: 
-      https://www.ncbi.nlm.nih.gov/mesh/68000544 
+## Instalação e utilização
 
-      output: 
-      [+] ("Alzheimer Disease" OR "Alzheimer Dementias" OR "Alzheimer Dementia" OR "Alzheimer's Disease" OR "Senile Dementia" OR "AlzheimerType Dementia (ATD)" OR "Alzheimer-Type Dementia (ATD)" OR "Alzheimer Type Dementia (ATD)" OR "AlzheimerType Dementia" OR "Alzheimer Type Dementia" OR "Alzheimer-Type Dementia" OR "Primary Senile Degenerative Dementia" OR "Alzheimer Sclerosis" OR "Alzheimer Syndrome" OR "Alzheimer's Diseases" OR "Alzheimer Diseases" OR "Alzheimers Diseases" OR "Alzheimer Type Senile Dementia" OR "Acute Confusional Senile Dementia" OR "Presenile Dementia" OR "Late Onset Alzheimer Disease" OR "Focal Onset Alzheimer's Disease" OR "Familial Alzheimer Disease (FAD)" OR "Familial Alzheimer Disease" OR "Familial Alzheimer Diseases (FAD)" OR "Early Onset Alzheimer Disease" OR "Presenile Alzheimer Dementia")
-      
-      [+] https://pubmed.ncbi.nlm.nih.gov/?term=("Alzheimer+Disease"+OR+"Alzheimer+Dementias"+OR+"Alzheimer+Dementia"+OR+"Alzheimer's+Disease"+OR+"Senile+Dementia"+OR+"AlzheimerType+Dementia+(ATD)"+OR+"Alzheimer-Type+Dementia+(ATD)"+OR+"Alzheimer+Type+Dementia+(ATD)"+OR+"AlzheimerType+Dementia"+OR+"Alzheimer+Type+Dementia"+OR+"Alzheimer-Type+Dementia"+OR+"Primary+Senile+Degenerative+Dementia"+OR+"Alzheimer+Sclerosis"+OR+"Alzheimer+Syndrome"+OR+"Alzheimer's+Diseases"+OR+"Alzheimer+Diseases"+OR+"Alzheimers+Diseases"+OR+"Alzheimer+Type+Senile+Dementia"+OR+"Acute+Confusional+Senile+Dementia"+OR+"Presenile+Dementia"+OR+"Late+Onset+Alzheimer+Disease"+OR+"Focal+Onset+Alzheimer's+Disease"+OR+"Familial+Alzheimer+Disease+(FAD)"+OR+"Familial+Alzheimer+Disease"+OR+"Familial+Alzheimer+Diseases+(FAD)"+OR+"Early+Onset+Alzheimer+Disease"+OR+"Presenile+Alzheimer+Dementia")
+### Pré-requisitos
 
-Ou:
-      
-      input: 
-      alzheimer
-
-      output: 
-      [+] ("Alzheimer Disease" OR "Alzheimer Dementias" OR "Alzheimer Dementia" OR "Alzheimer's Disease" OR "Senile Dementia" OR "AlzheimerType Dementia (ATD)" OR "Alzheimer-Type Dementia (ATD)" OR "Alzheimer Type Dementia (ATD)" OR "AlzheimerType Dementia" OR "Alzheimer Type Dementia" OR "Alzheimer-Type Dementia" OR "Primary Senile Degenerative Dementia" OR "Alzheimer Sclerosis" OR "Alzheimer Syndrome" OR "Alzheimer's Diseases" OR "Alzheimer Diseases" OR "Alzheimers Diseases" OR "Alzheimer Type Senile Dementia" OR "Acute Confusional Senile Dementia" OR "Presenile Dementia" OR "Late Onset Alzheimer Disease" OR "Focal Onset Alzheimer's Disease" OR "Familial Alzheimer Disease (FAD)" OR "Familial Alzheimer Disease" OR "Familial Alzheimer Diseases (FAD)" OR "Early Onset Alzheimer Disease" OR "Presenile Alzheimer Dementia")
-      
-      [+] https://pubmed.ncbi.nlm.nih.gov/?term=("Alzheimer+Disease"+OR+"Alzheimer+Dementias"+OR+"Alzheimer+Dementia"+OR+"Alzheimer's+Disease"+OR+"Senile+Dementia"+OR+"AlzheimerType+Dementia+(ATD)"+OR+"Alzheimer-Type+Dementia+(ATD)"+OR+"Alzheimer+Type+Dementia+(ATD)"+OR+"AlzheimerType+Dementia"+OR+"Alzheimer+Type+Dementia"+OR+"Alzheimer-Type+Dementia"+OR+"Primary+Senile+Degenerative+Dementia"+OR+"Alzheimer+Sclerosis"+OR+"Alzheimer+Syndrome"+OR+"Alzheimer's+Diseases"+OR+"Alzheimer+Diseases"+OR+"Alzheimers+Diseases"+OR+"Alzheimer+Type+Senile+Dementia"+OR+"Acute+Confusional+Senile+Dementia"+OR+"Presenile+Dementia"+OR+"Late+Onset+Alzheimer+Disease"+OR+"Focal+Onset+Alzheimer's+Disease"+OR+"Familial+Alzheimer+Disease+(FAD)"+OR+"Familial+Alzheimer+Disease"+OR+"Familial+Alzheimer+Diseases+(FAD)"+OR+"Early+Onset+Alzheimer+Disease"+OR+"Presenile+Alzheimer+Dementia")
-      
-
-
-## Requisitos
-Python3 e [pip](https://pip.pypa.io/en/stable/)
-
-## Instalação
+Para utilizar essa ferramenta, será necessário ter o [Python](https://www.python.org/downloads/) e o [Pip](https://pip.pypa.io/en/stable/installation/) instalados. Normalmente o Pip será automaticamente baixado caso você faça o download do Python usando o site oficial - que está linkado acima.
 
 ### Windows
-Baixe os arquivos pelo [link](https://www.github.com/zecabum/MeSH-Entry-Terms-string-generator/archive/refs/heads/main.zip) e extraia-os numa pasta
 
-Depois disso, abra o CMD e use o comando ```cd``` seguido do caminho até a pasta em que os arquivos foram extraídos.
+Se você está no Windows, baixe esse repositório e descompacte-o caso esteja compactado. Então, abra o CMD e navegue até o diretório de onde está a ferramenta usando o comando `cd`. Após isso, para usar o MeSH Scrapper, basta digitar
 
-E finalmente
-```bash
-pip install -r requirements.txt
-```
+`pip install -r requirements.txt`
+
+`python main.py <sua_busca1> <sua_busca2>`
+
 ### Linux
-Use ```git clone``` para fazer o download dos arquivos
-```bash
-git clone https://github.com/zecabum/MeSH-Entry-Terms-String-Generator.git
-```
-```bash
-cd MeSH-Entry-Terms-String-Generator/
-```
-```bash
-pip install -r requirements.txt
-```
-## Utilizaçao
-### Windows
-```bash
-python main.py
-```
-### Linux
-```bash
-python3 main.py
-```
-![Captura de tela em 2023-09-21 23-50-40](https://github.com/zecabum/MeSH-Entry-Terms-String-Generator/assets/105394456/43c5d2cc-a37f-4385-aed4-e416d26122b1)
 
-## Erros
-Durante a execução do script, pode ocorrer um erro de conexão devido à requisição que ele precisa fazer. Caso isso ocorra, apenas execute-o novamente, pois o erro deve sumir automaticamente após 1 ou 2 tentativas a mais.
+Caso esteja no Linux, abra o terminal e digite
+
+`git clone https://github.com/Pablo-henrique23/MeSH-Scrapper.git`
+
+`cd MeSH-Scrapper`
+
+`pip install requirements.txt`
+
+`python3 main.py <sua_busca1> <sua_busca2> `
+
+Atenção: é possível que os comandos avançados entrem em conflito com o shell usado. Por exemplo, o `zsh` usa colchetes (`[]`) para encontrar padrões nos nomes de diretórios (globbing) e, então, usar esse tipo de comando pode causar problemas. Para resolver isso, apenas escape os colchetes com `\` ou coloque o termo de busca entre aspas.
+
+## Utilização
+
+Os termos a serem buscados podem ou não estar entre aspas. Em alguns casos, pode ser bom usar aspas para evitar problemas, mas normalmente não será necessário. Não coloque mais de um termo no mesmo par de aspas, isso pode causar comportamento indefinido e o resultado da busca é imprevisível. É importante notar que `<sua_buscaX>` pode ir até 20 caso nenhuma alteração seja feita no código fonte. Caracteres especiais não são permitidos pois podem prejudicar o processo de busca. Usar links que levam direto ao que deseja buscar tende a ser mais rápido.
+
+## Exemplo
+
+Input: `python3 main.py alzheimer`
+
+Output: `("Alzheimer Disease" OR "Alzheimer Syndrome" OR "AlzheimerType Dementia (ATD)" OR "Alzheimer-Type Dementia (ATD)" OR "Alzheimer Type Dementia (ATD)" OR "AlzheimerType Dementia" OR "Alzheimer-Type Dementia" OR "Alzheimer's Diseases" OR "Alzheimer Diseases" OR "Alzheimers Diseases" OR "Alzheimer Dementias" OR "Alzheimer Dementia" OR "Alzheimer's Disease" OR "Senile Dementia" OR "Alzheimer Type Dementia" OR "Alzheimer Type Senile Dementia" OR "Alzheimer Sclerosis" OR "Primary Senile Degenerative Dementia" OR "Presenile Dementia" OR "Acute Confusional Senile Dementia" OR "Early Onset Alzheimer Disease" OR "Presenile Alzheimer Dementia" OR "Late Onset Alzheimer Disease" OR "Focal Onset Alzheimer's Disease" OR "Familial Alzheimer Disease (FAD)" OR "Familial Alzheimer Disease" OR "Familial Alzheimer Diseases (FAD)")                                                              https://pubmed.ncbi.nlm.nih.gov/?term=("Alzheimer+Disease"+OR+"Alzheimer+Syndrome"+OR+"AlzheimerType+Dementia+(ATD)"+OR+"Alzheimer-Type+Dementia+(ATD)"+OR+"Alzheimer+Type+Dementia+(ATD)"+OR+"AlzheimerType+Dementia"+OR+"Alzheimer-Type+Dementia"+OR+"Alzheimer's+Diseases"+OR+"Alzheimer+Diseases"+OR+"Alzheimers+Diseases"+OR+"Alzheimer+Dementias"+OR+"Alzheimer+Dementia"+OR+"Alzheimer's+Disease"+OR+"Senile+Dementia"+OR+"Alzheimer+Type+Dementia"+OR+"Alzheimer+Type+Senile+Dementia"+OR+"Alzheimer+Sclerosis"+OR+"Primary+Senile+Degenerative+Dementia"+OR+"Presenile+Dementia"+OR+"Acute+Confusional+Senile+Dementia"+OR+"Early+Onset+Alzheimer+Disease"+OR+"Presenile+Alzheimer+Dementia"+OR+"Late+Onset+Alzheimer+Disease"+OR+"Focal+Onset+Alzheimer's+Disease"+OR+"Familial+Alzheimer+Disease+FAD)"+OR+"Familial+Alzheimer+Disease"+OR+"Familial+Alzheimer+Diseases+(FAD)")`

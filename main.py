@@ -1,28 +1,55 @@
-from bs4 import BeautifulSoup
-import requests
-from funcoes import *
+import argparse
+import threading
+from source import processador
 
-BACKSLASH = "\\" 
-linha()
-entrada = input("> ").strip()
-if identificar_url(entrada):
-    req = requests.get(entrada)
-else:
-    req = requests.get(acharURLCorreto(entrada))
-linha()
+LIMITE = 20
+BACKSLASH = '\\'
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("args",nargs='+',help="Lista de termos a serem buscados.")
+    args = parser.parse_args()
 
-titulo = BeautifulSoup(req.content, 'html.parser')
-html = str(req.content)[str(req.content).find('Entry Terms'):]
-html = html[:html.find('</ul>')]
-lista_termos = []
+    argumentos = args.args
 
-for item in titulo.find_all("h1", class_="title"):
-    lista_termos.append(item.string.replace(BACKSLASH, ''))
+    if len(argumentos) > LIMITE:
+        print("[ERROR] Número muito grande de argumentos. Limite = 20.")
+        return
+    
+    threads = []
+    results = []
+    reps = []
 
-soup = BeautifulSoup(html, 'html.parser')
-for item in soup.find_all('li'):
-    lista_termos.append(rf"{item.string.replace(BACKSLASH, '')}")
+    for j in range(0,len(argumentos)):
+        if(argumentos[j].upper()) in reps:
+            continue
+        thread = threading.Thread(target=lambda arg=argumentos[j]: results.append((processador.use(j,argumentos[j]))))
+        thread.start()
+        threads.append(thread)
 
-termos = '('+" OR ".join(formatar(lista_termos))+')'
-print(f"\n[+] {termos}")
-print(f'\n[+] https://pubmed.ncbi.nlm.nih.gov/?term={termos.replace(" ", "+")}')
+        reps.append(argumentos[j].upper())
+
+    for thread in threads:
+        thread.join()
+    
+    query = ''
+
+    for c in results:
+        if c.query == '':
+            continue
+    
+        query += c.query
+        
+        if c != results[-1]:
+            query += ' AND '
+
+    if query == '':
+        print("[ERROR] A query não pôde ser gerada.")
+        return
+    query = query.replace(BACKSLASH,'')
+    link = f'https://pubmed.ncbi.nlm.nih.gov/?term={query.replace(" ","+")}'
+ 
+    print(f'\n{query}\n')
+    print(f'{link}\n')
+
+if __name__ == "__main__":
+    main()
