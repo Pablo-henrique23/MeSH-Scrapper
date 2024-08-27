@@ -78,7 +78,7 @@ def getFinal(lista:list) -> tuple:
     #f'https://pubmed.ncbi.nlm.nih.gov/?term={finalString.replace(" ","+")}'
 
 def identificarComando(doenca:str) -> str:
-    padrao = r'^(\w+)(\[[a-zçA-ZÇ]+\])$' # palavra[comando]
+    padrao = r'^[^-]([a-zA-ZÇç-]*)(\[[a-zçA-ZÇ]+\])$' # palavra[comando]
     match = re.search(padrao,doenca) # lista no formato ['doença', 'comando']
     if match != None: # sem essa condição vai dar ruim por causa do match.groups() poder ser None 
         if len(match.groups()) == 2 and match.group(2) in COMANDOS_VALIDOS: # se tiver comando válido

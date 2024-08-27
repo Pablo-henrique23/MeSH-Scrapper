@@ -42,7 +42,6 @@ def use(id:int, pesquisa:str) -> Retorno:
 
             else: # sem caractere malicioso e nao é numero (8 numeros), logo, é uma palavra
                 comando = identificarComando(pesquisa) # NOTA: comandos avançados nao sao suportados em URLs ou codigos numericos
-                
                 for c in range(0,10): # tenta achar ate 10 vezes o link certo
                     try:
                         url = acharURLCorreto(pesquisa) # item vai de nome pra URL    
@@ -64,7 +63,7 @@ def use(id:int, pesquisa:str) -> Retorno:
         else:
             return Retorno()
 
-    meshed = '' # Conterá os Entry Terms com OR entre eles. Mais abaixo vai tomar um " AND ".join() pra ficar esperto
+    meshed = '' # Conterá os Entry Terms com OR entre eles
     for c in range(0,10): # Tenta pegar a info de cada link ate 10 vezes
         try:
             req = requests.get(mesh.url, timeout=TIMEOUT)
