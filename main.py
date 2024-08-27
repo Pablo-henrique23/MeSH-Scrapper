@@ -4,6 +4,7 @@ from source import processador
 
 LIMITE = 20
 BACKSLASH = '\\'
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("args",nargs='+',help="Lista de termos a serem buscados.")
