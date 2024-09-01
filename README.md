@@ -1,6 +1,6 @@
 # MeSH Scrapper
 
-MeSH Scrapper uma ferramenta de linha de comando (cli) que faz exatamente o que diz: scrapping na base de dados do MeSH. Ele serve para juntar e formatar corretamente sinônimos de termos que podem ser buscados nessa base de dados, a fim de facilitar, melhorar e ampliar a busca por artigos da área da saúde. MeSH Scrapper aceita nomes, códigos númericos e URLs que levam ao que deseja buscar. Também foi feito para reconhecer "comandos avançados" nos termos de busca (disponível apenas em nomes), como "alzheimer[ti]".
+MeSH Scrapper uma ferramenta de linha de comando (cli) que faz scrapping na base de dados do MeSH. Ele serve para juntar e formatar corretamente sinônimos de termos que podem ser buscados nessa base de dados, a fim de facilitar, melhorar e ampliar a busca por artigos da área da saúde. MeSH Scrapper aceita nomes, códigos númericos e URLs que levam ao que deseja buscar. Também foi feito para reconhecer "comandos avançados" nos termos de busca (disponível apenas em nomes), como "alzheimer[ti]".
 
 ## Instalação e utilização
 
