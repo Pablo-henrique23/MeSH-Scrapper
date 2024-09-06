@@ -13,7 +13,7 @@ def main():
     argumentos = args.args
 
     if len(argumentos) > LIMITE:
-        print("[ERROR] Número muito grande de argumentos. Limite = 20.")
+        print(f"[ERROR] Número muito grande de argumentos. Limite = {LIMITE}.")
         return
     
     threads = []
