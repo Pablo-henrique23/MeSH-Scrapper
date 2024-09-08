@@ -46,7 +46,7 @@ def use(id:int, pesquisa:str) -> Retorno:
                     try:
                         url = acharURLCorreto(pesquisa) # item vai de nome pra URL    
                         if url == None: # se for invalido, ja sai do loop pra nao perder tempo
-                            break
+                            return Retorno()
 
                     except requests.Timeout: # timeout na request -> tenta de novo
                         continue
@@ -54,7 +54,7 @@ def use(id:int, pesquisa:str) -> Retorno:
                     else: # se der tudo certo no Try
                         if url != None:
                             if linkErrado(url): # nessa condiçao, 1 link foi achado mas ta errado
-                                break
+                                return Retorno()
 
                             else:
                                 mesh = Mesh(adv_command=comando, url=url)
