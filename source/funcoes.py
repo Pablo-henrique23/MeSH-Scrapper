@@ -24,7 +24,7 @@ def link_malicioso(item):
 
 def acharURLCorreto(entrada:str) -> str: # acha o url caso o usuario digite o nome da doença
     inicio = requests.get(f"https://www.ncbi.nlm.nih.gov/mesh/?term={entrada.strip()}", timeout=TIMEOUT).content # pega o html
-    pattern = re.compile(r'\d{8}$') # o codigo numerico de cada link tem exatamente 8 caracteres -> /mesh/XXXXXXXX
+    pattern = re.compile(r'\d{6,8}$') # o codigo numerico de cada link tem exatamente 8 caracteres -> /mesh/XXXXXXXX
     
     if not temTitulo(inicio):
         inicio = str(inicio)[str(inicio).find(r'id="messagearea"'):] # corta uma parte do html
