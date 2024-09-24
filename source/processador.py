@@ -23,7 +23,7 @@ def use(id:int, pesquisa:str) -> Retorno:
             return Retorno()
             
     else:   # é palavra/termo, nao é link
-        padrao = re.compile(r'^\d{8}$') # confere se o usuario forneceu os 8 numeros do codigo do link
+        padrao = re.compile(r'^\d{6,8}$') # confere se o usuario forneceu os 6-8 numeros do codigo do link
         if not caracteres_maliciosos(pesquisa):
 
             if bool(padrao.match(pesquisa)): # vê se sao 8 numeros
